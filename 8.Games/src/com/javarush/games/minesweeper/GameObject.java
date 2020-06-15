@@ -5,8 +5,8 @@ public class GameObject {
     public int x;
     public int y;
     public boolean isMine;              // Ячейка - мина
-    public int countMineNeighbors;      // Колтчество мин-соседей
-    public boolean isOpen;
+    public int countMineNeighbors;      // Количество мин-соседей у ячейки
+    public boolean isOpen;              // Ячейка открыта
     public boolean isFlag;
     
     public GameObject(int x, int y, boolean isMine){
