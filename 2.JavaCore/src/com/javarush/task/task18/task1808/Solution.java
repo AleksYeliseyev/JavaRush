@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        List<Integer> dataByte = new ArrayList<>();
+        /*List<Integer> dataByte = new ArrayList<>();
         String fileName1;
         String fileName2;
         String fileName3;
@@ -38,6 +38,26 @@ public class Solution {
         for (int i = count; i < dataByte.size(); i++) {
             fileOutputStream.write(dataByte.get(i));
         }
-        fileOutputStream.close();
+        fileOutputStream.close();*/
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String filename1 = "file1.txt";
+        String filename2 = "file2.txt";
+        String filename3 = "file3.txt";
+        FileInputStream file1 = new FileInputStream(filename1);
+        FileOutputStream file2 = new FileOutputStream(filename2);
+        FileOutputStream file3 = new FileOutputStream(filename3);
+        int s = file1.available();
+
+        while(file1.available() >= (s+1) / 2){
+            file2.write(file1.read());
+        }
+
+        while(file1.available() > 0){
+            file3.write(file1.read());
+        }
+        file1.close();
+        file2.close();
+        file3.close();
     }
 }
